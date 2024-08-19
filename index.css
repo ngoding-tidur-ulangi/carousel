@@ -1,0 +1,108 @@
+:root {
+    --width: 400px;
+    --background-color: #e2e8f0;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    overflow: hidden;
+    font-family: "New Amsterdam", sans-serif;
+    transition: 0.5s;
+}
+
+.carousel {
+    position: relative;
+    display: flex;
+    transition: 0.5s;
+}
+
+.image {
+    position: relative;
+    transform: matrix3d(0,0,0,0);
+    transition: 0.1s;
+    margin: 0 calc((100vw - var(--width) - var(--width) / 40 * 4) / 2);
+}
+
+.image img {
+    width: var(--width);
+    height: calc(var(--width) / 6 * 8);
+    border: calc(var(--width) / 40 * 2) solid rgb(245, 234, 234);
+    border-radius: calc(var(--width) / 40);
+    box-shadow: calc(var(--width) / 40 * 4) calc(var(--width) / 40 * 4) calc(var(--width) / 40 * 2) 0 gray;
+}
+
+.image .filter {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:  calc(var(--width) + var(--width) / 40 * 4);
+    height: calc(var(--width) / 6 * 8 + var(--width) / 40 * 4);
+    background-image: radial-gradient(rgba(50,50,50,0.1), rgba(50,50,50,0.1));
+    border-radius: calc(var(--width) / 40);
+}
+
+.top-text {
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.top-text p {
+    width: 100vw;
+    text-align: center;
+    font-size: calc(var(--width) / 40 * 16);
+    font-weight: bold;
+}
+
+.bottom-text {
+    position: absolute;
+    display: flex;
+    bottom: 0;
+    left: 0;
+    transition: 0.5s;
+    transition-delay: 0.2s;
+}
+
+.bottom-text p {
+    width: 100vw;
+    text-align: center;
+    font-size: calc(var(--width) / 40 * 16);
+    font-weight: bold;
+}
+
+button {
+    position: absolute;
+    top: 50vh;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+}
+
+button:hover {
+    background-color: #f8fafc;
+    box-shadow: 0 0 10px 5px white;
+}
+
+button.back {
+    left: 26vw;
+}
+
+button.next {
+    right: 26vw;
+}
